@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=Roboto:wght@100..900&display=swap");
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+
+
+body {
+    font-family: "Cairo", sans-serif;
+    font-weight: 400;
+}
+
+/* =========================
+   ROOT (Light Mode - محسّن)
+========================= */
+:root {
+
+    /* الخلفيات (أوضح + أقل بياض قاسي) */
+    --bg-main: #f8fafc;
+    /* بدل الأبيض القاسي */
+    --bg-box: #ffffff;
+    --bg-soft: #f1f5f9;
+    --bg-muted: #e2e8f0;
+
+    /* النصوص (أقوى تباين للقراءة) */
+    --text-primary: #0f172a;
+    /* أغمق لراحة العين */
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+
+    /* الحدود (أوضح من السابق) */
+    --border-neutral: #cbd5e1;
+    --border-soft: #e2e8f0;
+
+    /* اللون الأساسي (أكثر وضوح بدون إزعاج) */
+    --color-primary: #f97316;
+    --color-primary-soft: rgba(249, 115, 22, 0.14);
+
+    /* hover */
+    --hover-bg: #f1f5f9;
+    --hover-border: #94a3b8;
+
+    /* shadow (أعمق شوي لتمييز الكروت) */
+    --shadow-soft: 0 10px 30px rgba(2, 6, 23, 0.08);
+}
+
+/* =========================
+   DARK MODE (مريح أكثر)
+========================= */
+.dark {
+
+    /* الخلفيات (أسود حقيقي) */
+    --bg-main: #000000;
+    /* أسود كامل */
+    --bg-box: #0a0a0a;
+    /* كروت سوداء خفيفة */
+    --bg-soft: #111111;
+    /* طبقات */
+    --bg-muted: #1a1a1a;
+    /* عناصر ثانوية */
+
+    /* النصوص (تباين قوي) */
+    --text-primary: #f5f5f5;
+    --text-secondary: #b3b3b3;
+    --text-muted: #7a7a7a;
+
+    /* الحدود (واضحة لكن ناعمة) */
+    --border-neutral: #262626;
+    --border-soft: #1a1a1a;
+
+    /* اللون الأساسي */
+    --color-primary: #fb923c;
+    --color-primary-soft: rgba(251, 146, 60, 0.18);
+
+    /* hover */
+    --hover-bg: #141414;
+    --hover-border: #404040;
+
+    /* الظلال (أقوى شوي حتى يبين العمق) */
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+.bg-main {
+    background-color: var(--bg-main);
+}
+
+.bg-box {
+    background-color: var(--bg-box);
+}
+
+.bg-soft {
+    background-color: var(--bg-soft);
+}
+
+.bg-muted {
+    background-color: var(--bg-muted);
+}
+
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.border-neutral {
+    border-color: var(--border-neutral);
+}
+
+.border-soft {
+    border-color: var(--border-soft);
+}
+
+.text-brand {
+    color: var(--color-primary);
+}
+
+.bg-brand-soft {
+    background-color: var(--color-primary-soft);
+}
+
+.shadow-soft {
+    box-shadow: var(--shadow-soft);
+}
+
+.hover-background:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--hover-border);
+}
+
+/* =========================
+   Scrollbar (أنعم وأخف)
+========================= */
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-neutral);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+[x-cloak] {
+    display: none !important;
+}
