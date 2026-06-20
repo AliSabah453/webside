@@ -25,6 +25,10 @@ if ($template) {
 
  Route::get('/t', function () {
 
+
+
+
+
     $databaseName = 'qq';
 
     DB::statement(

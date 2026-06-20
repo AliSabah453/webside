@@ -7,13 +7,29 @@
     <title>
         {{ $title ?? config('app.name') }}
     </title>
-    @vite(['resources/css/admin/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
 
-<body>
+<body x-data = "mood()"  >
     {{ $slot }}
     @livewireScripts
 </body>
+<script>
+    function mood() {
+
+        return {
+            moon: localStorage.getItem('theme') === 'dark',
+            init() {
+                document.documentElement.classList.toggle('dark', this.moon);
+            },
+            toggle() {
+                this.moon = !this.moon;
+                localStorage.setItem('theme', this.moon ? 'dark' : 'light');
+                document.documentElement.classList.toggle('dark', this.moon);
+            }
+        }
+    }
+</script>
 
 </html>

@@ -53,34 +53,28 @@ new class extends Component {
             session()->flash('status', 'Post successfully updated.');
         }
     }
+
+    public function clearRememberSession()
+    {
+        Cookie::queue(Cookie::forget('remember_me'));
+
+        return $this->redirect(request()->header('Referer') ?? '/', navigate: true);
+    }
 };
 ?>
 
-<div>
+<div x-data = "{menu:false}">
+
+    @include('components.admin.login.tools.menu')
 
 
+    <div class=" w-full flex justify-between p-4 sticky z-10 top-0">
+        <div></div>
+        <div> <i x-on:click = "menu = ! menu"
+                class="bi  hover:text-sky-400 text-xl text-secondary transition-all  bi-gear cursor-pointer"></i></div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="flex w-full h-full items-center justify-center px-4  text-primary">
+    <div class="flex w-full h-screen items-center justify-center px-4  text-primary">
         <div class="w-full max-w-105">
             @if ($rememberMe)
                 @include('components.admin.login.rememberMe')
@@ -94,7 +88,27 @@ new class extends Component {
                     @include('components.admin.login.login')
                 @endif
             @endif
+            <br>
+            <br>
+            {{-- ================= Divider ================= --}}
+            <div class="px-10">
+                <div class="w-full border-t border border-soft"></div>
+            </div>
+            <br>
+            {{-- ================= Footer ================= --}}
+            <div class="text-center">
+
+                <span class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs text-secondary sm:text-sm">
+
+                    <i class="bi bi-shield-check text-sky-400"></i>
+
+                    جميع بينات مؤومنة
+
+                </span>
+
+            </div>
         </div>
+
     </div>
 
 
