@@ -1,13 +1,13 @@
 <?php
 
- use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Artisan;
 
-include('admin.php');
+ 
+include('auth.php');
 
-  
 $template = app('info');
 
 if ($template) {
@@ -20,9 +20,6 @@ if ($template) {
 }
 
  
- 
-
-
  Route::get('/t', function () {
 
 

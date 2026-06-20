@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Cookie;
 new class extends Component {
     public function render()
     {
-        return $this->view()->layout('components.admin.layout.app');
+        return $this->view()->layout('components.admin.layout.auth');
     }
 
     public $rememberMe;
@@ -65,7 +65,7 @@ new class extends Component {
 
 <div x-data = "{menu:false}">
 
-    @include('components.admin.login.tools.menu')
+    @include('components.auth.login.tools.menu')
 
 
     <div class=" w-full flex justify-between p-4 sticky z-10 top-0">
@@ -74,18 +74,19 @@ new class extends Component {
                 class="bi  hover:text-sky-400 text-xl text-secondary transition-all  bi-gear cursor-pointer"></i></div>
     </div>
 
-    <div class="flex w-full h-screen items-center justify-center px-4  text-primary">
-        <div class="w-full max-w-105">
+    <div
+        class="flex   transition-opacity   duration-750 opacity-100 starting:opacity-0 w-full h-screen items-center justify-center px-4  text-primary">
+        <div class="w-full  rounded-xl   max-w-105">
             @if ($rememberMe)
-                @include('components.admin.login.rememberMe')
+                @include('components.auth.login.rememberMe')
             @else
                 @if ($exists)
                     <div class=" transition-opacity duration-750 opacity-100 starting:opacity-0">
-                        @include('components.admin.login.pin')
+                        @include('components.auth.login.pin')
 
                     </div>
                 @else
-                    @include('components.admin.login.login')
+                    @include('components.auth.login.login')
                 @endif
             @endif
             <br>

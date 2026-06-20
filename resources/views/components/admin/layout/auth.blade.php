@@ -11,7 +11,9 @@
     @livewireStyles
 </head>
 
-<body x-data = "mood()">
+
+
+<body class="" x-data = "mood()">
     {{ $slot }}
     @livewireScripts
 </body>

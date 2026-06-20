@@ -64,7 +64,9 @@
     <div class="flex flex-col gap-4">
 
 
-        <div class="flex overflow-hidden rounded-xl border border-soft bg-box">
+        <div
+            class="flex focus-within:ring-2
+           focus-within:ring-sky-400/30 overflow-hidden rounded-xl border border-soft bg-box">
 
             <div class="flex h-14 w-full items-center">
 

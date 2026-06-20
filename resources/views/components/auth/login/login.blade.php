@@ -26,7 +26,7 @@
         <div dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}"
             class="flex items-center gap-3 rounded-xl border-2 border-dashed border-soft bg-box p-4 transition hover-background">
 
-            <span class="mt-1 flex h-4 w-4 items-center justify-center rounded-full border border-soft">
+            <span class="flex h-4 w-4 items-center justify-center rounded-full border border-soft">
                 <span class="h-2 w-2 rounded-full bg-sky-400"></span>
             </span>
             <div class="h-4 border-r border-soft w-px"></div>
@@ -48,14 +48,18 @@
     {{-- ================= Username ================= --}}
     <div class="flex flex-col gap-4">
 
-        <div class="flex overflow-hidden rounded-xl border border-soft bg-box">
+        <div
+            class="flex    overflow-hidden rounded-xl border border-soft   bg-box 
+              
+            focus-within:ring-2
+           focus-within:ring-sky-400/30">
 
             {{-- Input Area --}}
             <div class="flex h-14 w-full items-center">
 
                 <i class="bi bi-person px-4 text-lg text-primary"></i>
 
-                <input type="text" placeholder="Username" class="h-14 w-full bg-transparent text-sm outline-none"
+                <input type="text" placeholder="Username" class="h-14 w-full  text-secondary text-sm outline-none"
                     wire:model="username" />
 
             </div>

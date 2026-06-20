@@ -37,7 +37,8 @@
             <div class="min-w-0 flex-1 leading-6">
 
                 <p class="text-xs font-medium leading-6 text-secondary sm:text-sm">
-                    يتم استخدام رمز PIN للتحقق من هوية المستخدم وحماية الحساب
+                    يُستخدم رمز PIN للتحقق من هوية المستخدم وتعزيز أمان الحساب، مما يساهم في حماية بياناتك ومنع أي وصول
+                    غير مصرح به.
                 </p>
 
             </div>
@@ -52,7 +53,9 @@
         <div class="flex flex-col gap-4">
 
 
-            <div class="relative flex overflow-hidden rounded-xl border border-soft bg-box">
+            <div
+                class="relative focus-within:ring-2
+           focus-within:ring-sky-400/30 flex overflow-hidden rounded-xl border border-soft bg-box">
 
                 <div class="flex h-14 w-full items-center">
 
