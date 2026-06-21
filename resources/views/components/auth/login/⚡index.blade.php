@@ -68,10 +68,15 @@ new class extends Component {
     @include('components.auth.login.tools.menu')
 
 
-    <div class=" w-full flex justify-between p-4 sticky z-10 top-0">
-        <div></div>
-        <div> <i x-on:click = "menu = ! menu"
-                class="bi  hover:text-sky-400 text-xl text-secondary transition-all  bi-gear cursor-pointer"></i></div>
+    <div class=" w-full flex justify-between p-5 it sticky z-10 top-0">
+
+        <div>
+
+        </div>
+        <div class=" flex items-center">
+            <i
+                x-on:click = "menu = ! menu"class="bi  hover:text-sky-400 text-xl text-secondary transition-all  bi-gear cursor-pointer"></i>
+        </div>
     </div>
 
     <div
