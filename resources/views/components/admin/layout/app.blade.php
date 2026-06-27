@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html    lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -11,183 +11,293 @@
     @livewireStyles
 </head>
 
-<body x-data = "mood()">
+<body x-data = "..mood()">
+    <div x-data="{ startSession: true, menu: window.innerWidth > 1400, mobile: window.innerWidth <= 1400 }" x-init="window.addEventListener('resize', () => {
+        menu = window.innerWidth > 1400;
+        mobile = window.innerWidth <= 1400;
+    })" class="flex">
+        <div :class="mobile ? 'absolute z-50 w-full' : 'relative'" x-show="menu" class="w-72  overflow-auto   bg-box  border-x border-soft h-screen flex flex-col">
+            <!-- Top / Logo -->
+            <div class="px-5 h-15 flex items-center justify-between   border-b border-soft">
+                <img src="https://developers.hostinger.com/assets/images/hostinger-black.svg" class="h-6" />
+                <i x-show="mobile" x-on:click = "menu =  ! menu" class="bi cursor-pointer bi-window-stack"></i>
+            </div>
 
-
-
-    <div x-data="{ menu: window.innerWidth > 1500 }" x-init="window.addEventListener('resize', () => menu = window.innerWidth > 1500)" class="flex">
-        @persist('menu')
-            <div x-show="menu" class="w-72 border-r border-soft h-screen flex flex-col">
-
-                <!-- Top / Logo -->
-                <div class="px-5 h-15 flex items-center justify-center border-b border-soft">
-                    <img src="https://developers.hostinger.com/assets/images/hostinger-black.svg" class="h-6" />
-                </div>
-
+            @persist('menu')
                 <!-- Sidebar Content -->
-                <aside class="flex-1 overflow-y-auto p-2 space-y-6">
+                <aside class="flex-1 space-y-2">
 
-                    <!-- Search -->
+
+                    <a href="#" class="flex hover-background bg-soft items-center gap-2 px-4 py-3 text-sm">
+                        <i class="bi text-sky-400 bi-house"></i>
+                        <div class="h-2 border-r border-soft w-px"></div>
+                        <span class="font-medium text-primary text-sm">
+                            Domains
+                        </span>
+                    </a>
+
+                    <!-- Billing -->
                     <div>
-                        <input type="text" placeholder="Search"
-                            class="w-full px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-gray-300">
-                    </div>
+                        <div class="text-secondary text-xs uppercase px-3 pb-2">Billing</div>
+                        <div x-data = "{menu:false}" class=" border-soft overflow-hidden">
+                            <!-- Parent -->
+                            <button @click="menu = !menu" :class="menu ? 'bg-soft ,  border-soft  ' : ''"
+                                class="w-full flex items-center  text-primary  hover-background   border-b border-transparent    justify-between px-4 py-2    ">
 
-                    <!-- Helper style for links -->
-                    <!-- Overview -->
-                    <div x-data = "{menu:false}">
-                        <div class="mb-2 text-gray-400 text-xs uppercase px-3">Overview</div>
-
-                        <nav class="space-y-1">
-
-                            <a href="/dashboard" wire:navigate
-                                class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100">
-                                Authentication
-                            </a>
-                            <div @click="menu = !menu"
-                                class="flex flex-col gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition cursor-pointer">
-
-                                <!-- Header -->
-                                <div class="flex items-center justify-between">
-
-                                    <div class="flex items-center gap-3">
-                                        <i class="bi bi-gear text-sm"></i>
-
-                                        <div class="h-4 border-r border-soft"></div>
-
-                                        <span class="font-medium text-sm">
-                                            Parameters
-                                        </span>
-                                    </div>
-
-                                    <i class="bi bi-chevron-down text-xs transition duration-300"
-                                        :class="menu ? 'rotate-180' : ''">
-                                    </i>
-
+                                <div class="flex items-center gap-3">
+                                    <i class="bi  bi-shuffle text-sm"></i>
+                                    <div class="h-2 border-r border-soft w-px"></div>
+                                    <span class="font-medium text-sm">
+                                        Domains
+                                    </span>
                                 </div>
 
-                                <!-- Sub Menu -->
-                                <div x-show="menu" x-collapse @click.stop class="ml-5 border-l border-neutral pl-3">
+                                <i class="bi bi-chevron-down text-xs transition duration-300"
+                                    :class="menu ? 'rotate-180 text-sky-400' : ''">
+                                </i>
+                            </button>
 
-                                    <a
-                                        class="flex items-center gap-2 px-3 py-2 rounded-md text-sm hover:bg-gray-100 transition">
-                                        Parameters
-                                    </a>
+                            <!-- Children -->
+                            <div x-cloak x-show="menu" x-collapse>
+                                <div class="py-2 pl-10.5  ">
 
-                                    <a
-                                        class="flex items-center gap-2 px-3 py-2 rounded-md text-sm hover:bg-gray-100 transition">
-                                        Parameters
-                                    </a>
+                                    <div class="border-l text-secondary border-soft  space-y-1">
 
-                                    <a
-                                        class="flex items-center gap-2 px-3 py-2 rounded-md text-sm hover:bg-gray-100 transition">
-                                        Parameters
-                                    </a>
+                                        <a href="#"
+                                            class="flex hover-background items-center gap-2 px-3 py-2 rounded-r text-sm  transition ">
+
+                                            General Parameters
+                                        </a>
+
+                                        <a href="#"
+                                            class="flex hover-background items-center gap-2 px-3 py-2 rounded-r text-sm  transition">
+                                            Security Parameters
+                                        </a>
+
+                                        <a href="#"
+                                            class="flex hover-background items-center gap-2 px-3 py-2 rounded-r text-sm  transition">
+                                            Advanced Parameters
+                                        </a>
+
+                                    </div>
 
                                 </div>
 
                             </div>
 
 
-                            <a class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100">
-                                Parameters
-                            </a>
 
-                            <a class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100">
-                                Pagination
-                            </a>
 
-                            <a class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100">
-                                Errors
-                            </a>
+                            <div x-data = "{menu:false}" class=" border-soft overflow-hidden">
+                                <!-- Parent -->
+                                <button @click="menu = !menu" :class="menu ? 'bg-soft , border-b  ' : ''"
+                                    class="w-full flex items-center  text-primary  hover-background   border-soft  justify-between px-4 py-2    ">
 
-                            <a class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100">
-                                SDKs & Tools
-                            </a>
+                                    <div class="flex items-center gap-3">
+                                        <i class="bi  bi-shuffle text-sm"></i>
+                                        <div class="h-2 border-r border-soft w-px"></div>
+                                        <span class="font-medium text-sm">
+                                            Domains
+                                        </span>
+                                    </div>
 
-                            <a class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100">
-                                Change log
-                            </a>
+                                    <i class="bi bi-chevron-down text-xs transition duration-300"
+                                        :class="menu ? 'rotate-180 text-sky-400' : ''">
+                                    </i>
+                                </button>
 
-                            <a class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100">
-                                Support
-                            </a>
+                                <!-- Children -->
+                                <div x-cloak x-show="menu" x-collapse>
+                                    <div class="py-2 pl-10.5">
 
-                        </nav>
+                                        <div class="border-l text-secondary border-soft  space-y-1">
+
+                                            <a href="#"
+                                                class="flex hover-background items-center gap-2 px-3 py-2 rounded-r text-sm  transition ">
+
+                                                General Parameters
+                                            </a>
+
+                                            <a href="#"
+                                                class="flex hover-background items-center gap-2 px-3 py-2 rounded-r text-sm  transition">
+                                                Security Parameters
+                                            </a>
+
+                                            <a href="#"
+                                                class="flex hover-background items-center gap-2 px-3 py-2 rounded-r text-sm  transition">
+                                                Advanced Parameters
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                            <div class="border-t border-soft"></div>
+                            <div class="mt-4">
+                                <div class="  text-secondary text-xs uppercase px-3 pb-2">Billing</div>
+                                <button
+                                    class="w-full flex text-primary items-center hover-background border-soft  justify-between px-4 py-2   transition">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="bi bi-shuffle text-sm"></i>
+                                        <div class="h-2 border-r border-soft w-px"></div>
+
+                                        <span class="font-medium text-sm">
+                                            Domains
+                                        </span>
+
+                                    </div>
+
+                                </button>
+
+                                <button
+                                    class="w-full flex items-center text-secondary  hover-background   border-soft  justify-between px-4 py-2   transition">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="bi bi-shuffle text-sm"></i>
+                                        <div class="h-2 border-r border-soft w-px"></div>
+
+                                        <span class="font-medium text-sm">
+                                            Domains
+                                        </span>
+
+                                    </div>
+
+                                </button>
+
+                                <button
+                                    class="w-full flex items-center text-primary  hover-background   border-soft  justify-between px-4 py-2   transition">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="bi bi-shuffle text-sm"></i>
+                                        <div class="h-2 border-r border-soft w-px"></div>
+
+                                        <span class="font-medium text-sm">
+                                            Domains
+                                        </span>
+
+                                    </div>
+
+                                </button>
+
+                            </div>
+
+                        </div>
                     </div>
+                    <div x-data  = "{menu:false}" class=" absolute bottom-0  right-0 left-0">
+                        <button x-on:click = 'menu = !menu' :class="menu ? 'bg-soft' : ''"
+                            class="w-full cursor-pointer flex items-center border-t border-soft  justify-between px-4 py-3 hover-background transition">
+                            <div class="flex w-full items-center gap-3">
 
-                    <div class="border-t border-soft"></div>
+                                <!-- Logo -->
+                                <img src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="Company Logo"
+                                    class="w-10 h-10 rounded-lg object-cover border border-soft">
+                                <div class="h-4 border-r border-soft w-px"></div>
 
-                    <!-- Billing -->
-                    <div>
-                        <div class="mb-2 text-gray-400 text-xs uppercase px-3">Billing</div>
+                                <div class=" text-left w-full">
+                                    <h3 class="font-semibold  flex justify-between items-center text-sm leading-none">
+                                        <span class="text-primary"> Iraq Al-Badr Company</span>
+                                        <i class="bi bi-chevron-down text-xs transition duration-300"
+                                            :class="menu ? 'rotate-180 text-sky-400' : ''">
+                                        </i>
+                                    </h3>
 
-                        <nav class="space-y-1">
-                            <a class="block px-3 py-2 rounded-md hover:bg-gray-100">Catalog</a>
-                            <a class="block px-3 py-2 rounded-md hover:bg-gray-100">Payment methods</a>
-                            <a class="block px-3 py-2 rounded-md hover:bg-gray-100">Subscriptions</a>
-                        </nav>
+                                    <p class="text-xs text-secondary mt-1">
+                                        Managing Director : <strong>Hassan Abbas Qasim</strong>
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                        </button>
+                        <div x-cloak x-show="menu" x-collapse>
+                            <div class="py-2 pl-9  ">
+
+                                <div class="border-l text-secondary border-soft  space-y-1">
+
+                                    <button
+                                        class="w-full flex items-center   hover-background   border-soft  justify-between px-4 py-2   transition">
+
+                                        <div class="flex items-center gap-3">
+
+                                            <i class="bi bi-gear text-sm"></i>
+                                            <div class="h-2 border-r border-soft w-px"></div>
+
+                                            <span class="font-medium text-sm">
+                                                Setting Profile
+                                            </span>
+
+                                        </div>
+
+                                    </button>
+
+                                    <button
+                                        class="w-full flex items-center   hover-background   border-soft  justify-between px-4 py-2   transition">
+
+                                        <div class="flex items-center gap-3">
+
+                                            <i class="bi bi-qr-code-scan text-sm"></i>
+                                            <div class="h-2 border-r border-soft w-px"></div>
+
+                                            <span class="font-medium text-sm">
+                                                Device session
+                                            </span>
+
+                                        </div>
+
+                                    </button>
+
+                                    <button
+                                        class="w-full flex items-center   hover-background   border-soft  justify-between px-4 py-2   transition">
+
+                                        <div class="flex items-center gap-3">
+
+                                            <i class="bi bi-headset text-sm"></i>
+                                            <div class="h-2 border-r border-soft w-px"></div>
+
+                                            <span class="font-medium text-sm">
+                                                Contact support
+                                            </span>
+
+                                        </div>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
-
-                    <div class="border-t border-soft"></div>
-
-                    <!-- Domains -->
-                    <div>
-                        <div class="mb-2 text-gray-400 text-xs uppercase px-3">Domains</div>
-
-                        <nav class="space-y-1">
-                            <a class="block px-3 py-2 rounded-md hover:bg-gray-100">Availability</a>
-                            <a class="block px-3 py-2 rounded-md hover:bg-gray-100">Forwarding</a>
-                            <a class="block px-3 py-2 rounded-md hover:bg-gray-100">Portfolio</a>
-                            <a class="block px-3 py-2 rounded-md hover:bg-gray-100">WHOIS</a>
-                            <a class="block px-3 py-2 rounded-md hover:bg-gray-100">DNS</a>
-                        </nav>
-                    </div>
-
-                    <div class="border-t border-soft"></div>
-
-                    <!-- Advanced -->
-                    <div>
-                        <nav class="space-y-1">
-
-                            <a class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100">
-                                Snapshot
-                            </a>
-
-                            <a class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100">
-                                Zone
-                            </a>
-
-                            <a class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100">
-                                Domain Access Verifier
-                            </a>
-
-                            <a class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100">
-                                Verifications
-                            </a>
-
-                            <a class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100">
-                                Hosting
-                            </a>
-
-                        </nav>
-                    </div>
-
-
                 </aside>
-            </div>
-        @endpersist
+            @endpersist
+
+        </div>
 
 
         <div class=" flex-1">
             <div class=" w-full  flex items-center justify-between h-15 px-5  border-b      border-soft">
                 <div class="flex  text-secondary text-lg items-center gap-3">
                     <i x-on:click = "menu =  ! menu" class="bi bi-window-stack"></i>
-                    <i class="bi bi-arrow-clockwise"></i>
+                    @livewire('admin.page.dashboard.tools.reload')
                 </div>
                 <div class=" flex items-center gap-4">
-                    <div class="text-lg text-secondary  flex items-center">
-                        <i x-on:click = "toggle()" x-show = "!moon" class="bi cursor-pointer bi-moon-stars"></i>
+                    <div class="text-lg text-secondary  gap-3 flex items-center">
+                        <i class="bi bi-app-indicator"></i>
+                        <i x-on:click = "toggle()" x-show = "!moon" class="bi  cursor-pointer bi-moon-stars"></i>
                         <i x-on:click = "toggle()" x-show = "moon" class="bi cursor-pointer bi-brightness-high"></i>
                     </div>
                     <div class="flex items-center gap-2.5">
@@ -195,14 +305,14 @@
                             src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
                         <div class="h-4 border-r border-soft w-px"></div>
 
-                        <div class="font-medium text-heading">
+                        <div class="font-medium flex gap-3 items-center  justify-center">
                             <div class="text-primary">Jese Leos</div>
-                            <div class="text-sm  text-secondary font-normal text-body">Joined in August 2014</div>
+                            <i class="bi bi-chevron-down text-xs transition duration-300 mt-2"></i>
                         </div>
                     </div>
                 </div>
-
             </div>
+
             <div class="p-5  transition-opacity   duration-750 opacity-100 starting:opacity-0">
 
                 {{-- ================= HEADER ================= --}}
@@ -221,12 +331,9 @@
                         <span class="text-secondary/40">•</span>
 
                         <span class="inline-flex items-center gap-1 font-bold text-indigo-500">
-
                             <a wire:navigate href="/dashboard">
                                 Dashboard
                             </a>
-
-
                         </span>
 
                     </div>
@@ -234,34 +341,37 @@
                 <br>
                 <div class="mx-auto w-full max-w-400">
                     {{ $slot }}
+
                 </div>
             </div>
         </div>
+        {{-- @livewire('tools.session.startSession')
+        @livewire('tools.session.startSession') --}}
+        @include('components.profile.page.index')
+
+
     </div>
 
-
-
-
-
-
-
     @livewireScripts
-</body>
-<script>
-    function mood() {
 
-        return {
-            moon: localStorage.getItem('theme') === 'dark',
-            init() {
-                document.documentElement.classList.toggle('dark', this.moon);
-            },
-            toggle() {
-                this.moon = !this.moon;
-                localStorage.setItem('theme', this.moon ? 'dark' : 'light');
-                document.documentElement.classList.toggle('dark', this.moon);
+    <script>
+        function mood() {
+
+            return {
+                moon: localStorage.getItem('theme') === 'dark',
+                init() {
+                    document.documentElement.classList.toggle('dark', this.moon);
+                },
+                toggle() {
+                    this.moon = !this.moon;
+                    localStorage.setItem('theme', this.moon ? 'dark' : 'light');
+                    document.documentElement.classList.toggle('dark', this.moon);
+                }
             }
         }
-    }
-</script>
+    </script>
+
+</body>
+
 
 </html>

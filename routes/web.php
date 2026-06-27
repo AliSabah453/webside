@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Artisan;
-
+ 
  
 include('auth.php');
 
@@ -19,35 +19,34 @@ if ($template) {
     include('admin.php');
 }
 
+
+use App\Events\TestMessageEvent;
+
  
  Route::get('/t', function () {
 
+    // $databaseName = 'qq';
 
-
-
-
-    $databaseName = 'qq';
-
-    DB::statement(
-        "CREATE DATABASE IF NOT EXISTS `$databaseName`
-         CHARACTER SET utf8mb4
-         COLLATE utf8mb4_unicode_ci"
-    );
+    // DB::statement(
+    //     "CREATE DATABASE IF NOT EXISTS `$databaseName`
+    //      CHARACTER SET utf8mb4
+    //      COLLATE utf8mb4_unicode_ci"
+    // );
 
     
-        Config::set(
-            'database.connections.mysql.database',
-           $databaseName // اسم الحقل الذي يحتوي اسم قاعدة البيانات
-        );
+    //     Config::set(
+    //         'database.connections.mysql.database',
+    //        $databaseName // اسم الحقل الذي يحتوي اسم قاعدة البيانات
+    //     );
 
-        DB::purge('mysql');
-        DB::reconnect('mysql');
+    //     DB::purge('mysql');
+    //     DB::reconnect('mysql');
 
 
-      // تشغيل migrations
-      Artisan::call('migrate', [
-            '--path' => 'database/migrations/customer',
-        ]);
+    //   // تشغيل migrations
+    //   Artisan::call('migrate', [
+    //         '--path' => 'database/migrations/customer',
+    //     ]);
  
-    return 'Database created successfully';
+    // return 'Database created successfully';
 });

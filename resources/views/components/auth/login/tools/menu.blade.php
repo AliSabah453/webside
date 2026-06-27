@@ -100,7 +100,7 @@
 
                 {{-- Code --}}
                 <div class="text-3xl tracking-[0.3em] font-semibold text-primary mb-4">
-                    78601078
+                    {{ app('channel_id') }}
                 </div>
 
                 {{-- Info --}}

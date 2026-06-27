@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=Roboto:wght@100..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
-
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -15,7 +15,8 @@
 
 
 body {
-    font-family: "Cairo", sans-serif;
+    font-family: "Outfit", "Cairo", sans-serif;
+
     font-weight: 400;
     background-color: var(--bg-main);
 
@@ -136,7 +137,6 @@ body {
 
 .hover-background:hover {
     background-color: var(--hover-bg);
-    border-color: var(--hover-border);
 }
 
 /* =========================

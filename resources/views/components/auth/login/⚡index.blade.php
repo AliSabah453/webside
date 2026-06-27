@@ -4,11 +4,12 @@ use Livewire\Component;
 use App\Models\admin\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Livewire\Attributes\On;
 
 new class extends Component {
     public function render()
     {
-        return $this->view()->layout('components.admin.layout.auth');
+        return $this->view()->layout('components.auth.layout.auth');
     }
 
     public $rememberMe;

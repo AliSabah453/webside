@@ -14,10 +14,9 @@ Route::livewire('/products', 'customer.website.' .$template.'.page.products.inde
  
 
 
-Route::livewire('/dashboard', 'customer.website.' .$template.'.dashboard.home.index');
+Route::livewire('/dashboard', 'customer.website.' .$template.'.dashboard.page.index');
 
-Route::livewire('/login', 'customer.website.' .$template.'.login.index');
-
+ 
 
 
 

@@ -12,5 +12,6 @@ new class extends Component {
 ?>
 
 <div>
-    {{-- Smile, breathe, and go slowly. - Thich Nhat Hanh --}}
+
+    dashboard الزبون
 </div>

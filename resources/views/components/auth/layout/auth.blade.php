@@ -15,8 +15,10 @@
 
 <body class="" x-data = "mood()">
     {{ $slot }}
+
     @livewireScripts
 </body>
+@livewire('tools.session.openSession')
 <script>
     function mood() {
 

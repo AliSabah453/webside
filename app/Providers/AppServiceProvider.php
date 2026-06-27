@@ -22,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
   
     public function boot(): void
 {
+    app()->instance('channel_id', random_int(100000, 999999));
     $host = Request::getHost();
 
     $parts = explode('.', $host);
@@ -37,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         app()->instance('info', $website);
-
+ 
         Config::set(
             'database.connections.mysql.database',
             $website->db_name // اسم الحقل الذي يحتوي اسم قاعدة البيانات
@@ -50,6 +51,7 @@ class AppServiceProvider extends ServiceProvider
     } else {
         // حالة الدومين الرئيسي (admin أو بدون subdomain)
         app()->instance('info', false);
+ 
     }
 }
    
