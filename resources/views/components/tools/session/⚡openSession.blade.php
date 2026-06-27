@@ -10,6 +10,7 @@ new class extends Component {
     #[On('openSession')]
     public function handleEvent($id = null, $domain = null)
     {
+        // مرحبا حب
         if ($domain == Request::getHost()) {
             $User = User::find($id);
             Auth::login($User);
