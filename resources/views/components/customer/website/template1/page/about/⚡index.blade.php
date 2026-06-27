@@ -26,7 +26,7 @@ new class extends Component {
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <div class="max-w-3xl">
                 <div class="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-slate-200 mb-6"
-                     data-en="About Our Company" data-ar="من نحن">
+                     data-en="About Our Company" data-ar="من ?نحن">
                     About Our Company
                 </div>
 
