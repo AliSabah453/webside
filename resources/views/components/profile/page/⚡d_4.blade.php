@@ -186,6 +186,6 @@
 
      </main>
 
-     @livewire('tools.session.startSession')
+                    @livewire('tools.session.startSession')
 
  </div>
