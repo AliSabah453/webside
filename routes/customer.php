@@ -22,7 +22,7 @@ Route::livewire('/dashboard/settings', 'customer.website.' .$template.'.dashboar
 Route::livewire('/dashboard/menu', 'customer.website.' .$template.'.dashboard.menu.index');
 Route::livewire('/dashboard/media', 'customer.website.' .$template.'.dashboard.media.index');
 Route::livewire('/dashboard/products', 'customer.website.' .$template.'.dashboard.products.index');
-
+Route::livewire('/login', 'customer.website.' .$template.'.login.index');
 
 
 
