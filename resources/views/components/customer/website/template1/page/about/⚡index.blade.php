@@ -8,122 +8,194 @@ new class extends Component {
         $template = app('info')->template_type;
         return $this->view()->layout("components.customer.website.$template.layout.app");
     }
+
+   
 };
 ?>
 
+<div class="bg-white dark:bg-slate-950">
+ 
+ 
 
-<div>
-    <div class="pt-0 pr-0 pb-0 pl-0 mt-0 mr-0 mb-0 ml-0">
-        <div class="pt-0 pr-0 pb-0 pl-0 mt-0 mr-0 mb-0 ml-0 bg-white">
-            <div
-                class="pt-16 pr-4 pb-16 pl-4 mt-0  mb-0    md:px-24 lg:px-8 lg:py-20">
-                <div class="pt-0 pr-0 pb-0 pl-0 mt-0 mr-0 mb-0 ml-0 grid gap-5 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                    <div class="pt-0 pr-12 pb-0 pl-12 mt-0 mr-0 mb-0 ml-0 text-center sm:px-0">
-                        <p
-                            class="mt-0 mr-auto mb-4 ml-auto flex w-10 h-10 items-center justify-center rounded-full sm:w-10 sm:h-10">
-                            <svg viewBox="0 0 512 512" fill="currentColor" class="w-7"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="m511.4 38.222c-1.109-20.338-17.284-36.511-37.622-37.621-41.038-2.242-121.342-.061-198.13 39.656-39.145 20.248-80.545 54.577-113.584 94.185-.407.488-.803.979-1.207 1.468l-74.98 5.792c-12.342.954-23.335 7.423-30.161 17.747l-51.154 77.372c-5.177 7.83-6 17.629-2.203 26.212 3.798 8.584 11.602 14.566 20.877 16.003l63.171 9.784c-.223 1.228-.447 2.455-.652 3.683-2.103 12.58 2.065 25.514 11.151 34.599l87.992 87.993c7.533 7.533 17.712 11.686 28.142 11.686 2.148 0 4.308-.177 6.458-.536 1.228-.205 2.455-.429 3.683-.652l9.784 63.172c1.437 9.275 7.419 17.08 16.001 20.877 3.571 1.58 7.35 2.36 11.112 2.36 5.283-.001 10.529-1.539 15.101-4.562l77.372-51.155c10.325-6.827 16.793-17.82 17.745-30.161l5.792-74.979c.489-.404.981-.8 1.469-1.207 39.609-33.039 73.939-74.439 94.186-113.585 39.719-76.791 41.896-157.096 39.657-198.131zm-175.394 393.037-74.011 48.933-9.536-61.565c31.28-9.197 62.223-23.927 91.702-43.66l-3.773 48.845c-.235 3.047-1.833 5.762-4.382 7.447zm-129.895-37.377-87.993-87.993c-2.245-2.246-3.283-5.401-2.774-8.44 2.616-15.643 6.681-30.534 11.713-44.562l132.028 132.028c-16.848 6.035-31.939 9.635-44.534 11.741-3.044.506-6.195-.529-8.44-2.774zm-117.923-222.269 48.844-3.773c-19.734 29.479-34.464 60.422-43.661 91.702l-61.564-9.535 48.934-74.012c1.686-2.55 4.401-4.147 7.447-4.382zm270.155 155.286c-24.233 20.213-47.756 34.833-69.438 45.412l-149.221-149.221c13.858-28.304 30.771-51.873 45.417-69.431 30.575-36.655 68.602-68.276 104.331-86.756 70.474-36.453 144.725-38.416 182.713-36.348 5.028.274 9.027 4.273 9.301 9.302 2.071 37.988.104 112.238-36.349 182.713-18.479 35.728-50.1 73.754-86.754 104.329z">
-                                </path>
-                                <path
-                                    d="m350.721 236.243c19.202-.002 38.412-7.312 53.031-21.931 14.166-14.165 21.966-32.999 21.966-53.031s-7.801-38.866-21.966-53.031c-29.242-29.243-76.822-29.241-106.062 0-14.166 14.165-21.967 32.999-21.967 53.031s7.802 38.866 21.967 53.031c14.622 14.622 33.822 21.933 53.031 21.931zm-31.82-106.781c8.772-8.773 20.295-13.159 31.818-13.159 11.524 0 23.047 4.386 31.819 13.159 8.499 8.499 13.179 19.799 13.179 31.818s-4.68 23.32-13.179 31.819c-17.544 17.545-46.093 17.544-63.638 0-8.499-8.499-13.18-19.799-13.18-31.818s4.682-23.32 13.181-31.819z">
-                                </path>
-                                <path
-                                    d="m15.301 421.938c3.839 0 7.678-1.464 10.606-4.394l48.973-48.973c5.858-5.858 5.858-15.355 0-21.213-5.857-5.858-15.355-5.858-21.213 0l-48.972 48.973c-5.858 5.858-5.858 15.355 0 21.213 2.928 2.929 6.767 4.394 10.606 4.394z">
-                                </path>
-                                <path
-                                    d="m119.761 392.239c-5.857-5.858-15.355-5.858-21.213 0l-94.154 94.155c-5.858 5.858-5.858 15.355 0 21.213 2.929 2.929 6.767 4.393 10.606 4.393s7.678-1.464 10.606-4.394l94.154-94.154c5.859-5.858 5.859-15.355.001-21.213z">
-                                </path>
-                                <path
-                                    d="m143.429 437.12-48.973 48.973c-5.858 5.858-5.858 15.355 0 21.213 2.929 2.929 6.768 4.394 10.606 4.394s7.678-1.464 10.606-4.394l48.973-48.973c5.858-5.858 5.858-15.355 0-21.213-5.857-5.858-15.355-5.858-21.212 0z">
-                                </path>
-                            </svg>
-                        </p>
-                        <p class="leading-5 text-sm font-bold tracking-wider mt-0 mr-0 mb-2 ml-0 uppercase">Fearless</p>
-                        <p class="text-sm text-gray-700 mt-0 mr-0 mb-2 ml-0">I will remember and recover, not forgive
-                            and forget.</p>
-                    </div>
-                    <div class="pt-0 pr-12 pb-0 pl-12 mt-0 mr-0 mb-0 ml-0 text-center sm:px-0">
-                        <p
-                            class="mt-0 mr-auto mb-4 ml-auto flex w-10 h-10 items-center justify-center rounded-full sm:w-10 sm:h-10">
-                            <svg viewBox="0 0 512 512" fill="currentColor" class="w-7"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="m511.4 38.222c-1.109-20.338-17.284-36.511-37.622-37.621-41.038-2.242-121.342-.061-198.13 39.656-39.145 20.248-80.545 54.577-113.584 94.185-.407.488-.803.979-1.207 1.468l-74.98 5.792c-12.342.954-23.335 7.423-30.161 17.747l-51.154 77.372c-5.177 7.83-6 17.629-2.203 26.212 3.798 8.584 11.602 14.566 20.877 16.003l63.171 9.784c-.223 1.228-.447 2.455-.652 3.683-2.103 12.58 2.065 25.514 11.151 34.599l87.992 87.993c7.533 7.533 17.712 11.686 28.142 11.686 2.148 0 4.308-.177 6.458-.536 1.228-.205 2.455-.429 3.683-.652l9.784 63.172c1.437 9.275 7.419 17.08 16.001 20.877 3.571 1.58 7.35 2.36 11.112 2.36 5.283-.001 10.529-1.539 15.101-4.562l77.372-51.155c10.325-6.827 16.793-17.82 17.745-30.161l5.792-74.979c.489-.404.981-.8 1.469-1.207 39.609-33.039 73.939-74.439 94.186-113.585 39.719-76.791 41.896-157.096 39.657-198.131zm-175.394 393.037-74.011 48.933-9.536-61.565c31.28-9.197 62.223-23.927 91.702-43.66l-3.773 48.845c-.235 3.047-1.833 5.762-4.382 7.447zm-129.895-37.377-87.993-87.993c-2.245-2.246-3.283-5.401-2.774-8.44 2.616-15.643 6.681-30.534 11.713-44.562l132.028 132.028c-16.848 6.035-31.939 9.635-44.534 11.741-3.044.506-6.195-.529-8.44-2.774zm-117.923-222.269 48.844-3.773c-19.734 29.479-34.464 60.422-43.661 91.702l-61.564-9.535 48.934-74.012c1.686-2.55 4.401-4.147 7.447-4.382zm270.155 155.286c-24.233 20.213-47.756 34.833-69.438 45.412l-149.221-149.221c13.858-28.304 30.771-51.873 45.417-69.431 30.575-36.655 68.602-68.276 104.331-86.756 70.474-36.453 144.725-38.416 182.713-36.348 5.028.274 9.027 4.273 9.301 9.302 2.071 37.988.104 112.238-36.349 182.713-18.479 35.728-50.1 73.754-86.754 104.329z">
-                                </path>
-                                <path
-                                    d="m350.721 236.243c19.202-.002 38.412-7.312 53.031-21.931 14.166-14.165 21.966-32.999 21.966-53.031s-7.801-38.866-21.966-53.031c-29.242-29.243-76.822-29.241-106.062 0-14.166 14.165-21.967 32.999-21.967 53.031s7.802 38.866 21.967 53.031c14.622 14.622 33.822 21.933 53.031 21.931zm-31.82-106.781c8.772-8.773 20.295-13.159 31.818-13.159 11.524 0 23.047 4.386 31.819 13.159 8.499 8.499 13.179 19.799 13.179 31.818s-4.68 23.32-13.179 31.819c-17.544 17.545-46.093 17.544-63.638 0-8.499-8.499-13.18-19.799-13.18-31.818s4.682-23.32 13.181-31.819z">
-                                </path>
-                                <path
-                                    d="m15.301 421.938c3.839 0 7.678-1.464 10.606-4.394l48.973-48.973c5.858-5.858 5.858-15.355 0-21.213-5.857-5.858-15.355-5.858-21.213 0l-48.972 48.973c-5.858 5.858-5.858 15.355 0 21.213 2.928 2.929 6.767 4.394 10.606 4.394z">
-                                </path>
-                                <path
-                                    d="m119.761 392.239c-5.857-5.858-15.355-5.858-21.213 0l-94.154 94.155c-5.858 5.858-5.858 15.355 0 21.213 2.929 2.929 6.767 4.393 10.606 4.393s7.678-1.464 10.606-4.394l94.154-94.154c5.859-5.858 5.859-15.355.001-21.213z">
-                                </path>
-                                <path
-                                    d="m143.429 437.12-48.973 48.973c-5.858 5.858-5.858 15.355 0 21.213 2.929 2.929 6.768 4.394 10.606 4.394s7.678-1.464 10.606-4.394l48.973-48.973c5.858-5.858 5.858-15.355 0-21.213-5.857-5.858-15.355-5.858-21.212 0z">
-                                </path>
-                            </svg>
-                        </p>
-                        <p class="leading-5 text-sm font-bold tracking-wider mt-0 mr-0 mb-2 ml-0 uppercase">Fearless</p>
-                        <p class="text-sm text-gray-700 mt-0 mr-0 mb-2 ml-0">I will remember and recover, not forgive
-                            and forget.</p>
-                    </div>
-                    <div class="pt-0 pr-12 pb-0 pl-12 mt-0 mr-0 mb-0 ml-0 text-center sm:px-0">
-                        <p
-                            class="mt-0 mr-auto mb-4 ml-auto flex w-10 h-10 items-center justify-center rounded-full sm:w-10 sm:h-10">
-                            <svg viewBox="0 0 512 512" fill="currentColor" class="w-7"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="m511.4 38.222c-1.109-20.338-17.284-36.511-37.622-37.621-41.038-2.242-121.342-.061-198.13 39.656-39.145 20.248-80.545 54.577-113.584 94.185-.407.488-.803.979-1.207 1.468l-74.98 5.792c-12.342.954-23.335 7.423-30.161 17.747l-51.154 77.372c-5.177 7.83-6 17.629-2.203 26.212 3.798 8.584 11.602 14.566 20.877 16.003l63.171 9.784c-.223 1.228-.447 2.455-.652 3.683-2.103 12.58 2.065 25.514 11.151 34.599l87.992 87.993c7.533 7.533 17.712 11.686 28.142 11.686 2.148 0 4.308-.177 6.458-.536 1.228-.205 2.455-.429 3.683-.652l9.784 63.172c1.437 9.275 7.419 17.08 16.001 20.877 3.571 1.58 7.35 2.36 11.112 2.36 5.283-.001 10.529-1.539 15.101-4.562l77.372-51.155c10.325-6.827 16.793-17.82 17.745-30.161l5.792-74.979c.489-.404.981-.8 1.469-1.207 39.609-33.039 73.939-74.439 94.186-113.585 39.719-76.791 41.896-157.096 39.657-198.131zm-175.394 393.037-74.011 48.933-9.536-61.565c31.28-9.197 62.223-23.927 91.702-43.66l-3.773 48.845c-.235 3.047-1.833 5.762-4.382 7.447zm-129.895-37.377-87.993-87.993c-2.245-2.246-3.283-5.401-2.774-8.44 2.616-15.643 6.681-30.534 11.713-44.562l132.028 132.028c-16.848 6.035-31.939 9.635-44.534 11.741-3.044.506-6.195-.529-8.44-2.774zm-117.923-222.269 48.844-3.773c-19.734 29.479-34.464 60.422-43.661 91.702l-61.564-9.535 48.934-74.012c1.686-2.55 4.401-4.147 7.447-4.382zm270.155 155.286c-24.233 20.213-47.756 34.833-69.438 45.412l-149.221-149.221c13.858-28.304 30.771-51.873 45.417-69.431 30.575-36.655 68.602-68.276 104.331-86.756 70.474-36.453 144.725-38.416 182.713-36.348 5.028.274 9.027 4.273 9.301 9.302 2.071 37.988.104 112.238-36.349 182.713-18.479 35.728-50.1 73.754-86.754 104.329z">
-                                </path>
-                                <path
-                                    d="m350.721 236.243c19.202-.002 38.412-7.312 53.031-21.931 14.166-14.165 21.966-32.999 21.966-53.031s-7.801-38.866-21.966-53.031c-29.242-29.243-76.822-29.241-106.062 0-14.166 14.165-21.967 32.999-21.967 53.031s7.802 38.866 21.967 53.031c14.622 14.622 33.822 21.933 53.031 21.931zm-31.82-106.781c8.772-8.773 20.295-13.159 31.818-13.159 11.524 0 23.047 4.386 31.819 13.159 8.499 8.499 13.179 19.799 13.179 31.818s-4.68 23.32-13.179 31.819c-17.544 17.545-46.093 17.544-63.638 0-8.499-8.499-13.18-19.799-13.18-31.818s4.682-23.32 13.181-31.819z">
-                                </path>
-                                <path
-                                    d="m15.301 421.938c3.839 0 7.678-1.464 10.606-4.394l48.973-48.973c5.858-5.858 5.858-15.355 0-21.213-5.857-5.858-15.355-5.858-21.213 0l-48.972 48.973c-5.858 5.858-5.858 15.355 0 21.213 2.928 2.929 6.767 4.394 10.606 4.394z">
-                                </path>
-                                <path
-                                    d="m119.761 392.239c-5.857-5.858-15.355-5.858-21.213 0l-94.154 94.155c-5.858 5.858-5.858 15.355 0 21.213 2.929 2.929 6.767 4.393 10.606 4.393s7.678-1.464 10.606-4.394l94.154-94.154c5.859-5.858 5.859-15.355.001-21.213z">
-                                </path>
-                                <path
-                                    d="m143.429 437.12-48.973 48.973c-5.858 5.858-5.858 15.355 0 21.213 2.929 2.929 6.768 4.394 10.606 4.394s7.678-1.464 10.606-4.394l48.973-48.973c5.858-5.858 5.858-15.355 0-21.213-5.857-5.858-15.355-5.858-21.212 0z">
-                                </path>
-                            </svg>
-                        </p>
-                        <p class="leading-5 text-sm font-bold tracking-wider mt-0 mr-0 mb-2 ml-0 uppercase">Fearless</p>
-                        <p class="text-sm text-gray-700 mt-0 mr-0 mb-2 ml-0">I will remember and recover, not forgive
-                            and forget.</p>
-                    </div>
-                    <div class="pt-0 pr-12 pb-0 pl-12 mt-0 mr-0 mb-0 ml-0 text-center sm:px-0">
-                        <p
-                            class="mt-0 mr-auto mb-4 ml-auto flex w-10 h-10 items-center justify-center rounded-full sm:w-10 sm:h-10">
-                            <svg viewBox="0 0 512 512" fill="currentColor" class="w-7"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="m511.4 38.222c-1.109-20.338-17.284-36.511-37.622-37.621-41.038-2.242-121.342-.061-198.13 39.656-39.145 20.248-80.545 54.577-113.584 94.185-.407.488-.803.979-1.207 1.468l-74.98 5.792c-12.342.954-23.335 7.423-30.161 17.747l-51.154 77.372c-5.177 7.83-6 17.629-2.203 26.212 3.798 8.584 11.602 14.566 20.877 16.003l63.171 9.784c-.223 1.228-.447 2.455-.652 3.683-2.103 12.58 2.065 25.514 11.151 34.599l87.992 87.993c7.533 7.533 17.712 11.686 28.142 11.686 2.148 0 4.308-.177 6.458-.536 1.228-.205 2.455-.429 3.683-.652l9.784 63.172c1.437 9.275 7.419 17.08 16.001 20.877 3.571 1.58 7.35 2.36 11.112 2.36 5.283-.001 10.529-1.539 15.101-4.562l77.372-51.155c10.325-6.827 16.793-17.82 17.745-30.161l5.792-74.979c.489-.404.981-.8 1.469-1.207 39.609-33.039 73.939-74.439 94.186-113.585 39.719-76.791 41.896-157.096 39.657-198.131zm-175.394 393.037-74.011 48.933-9.536-61.565c31.28-9.197 62.223-23.927 91.702-43.66l-3.773 48.845c-.235 3.047-1.833 5.762-4.382 7.447zm-129.895-37.377-87.993-87.993c-2.245-2.246-3.283-5.401-2.774-8.44 2.616-15.643 6.681-30.534 11.713-44.562l132.028 132.028c-16.848 6.035-31.939 9.635-44.534 11.741-3.044.506-6.195-.529-8.44-2.774zm-117.923-222.269 48.844-3.773c-19.734 29.479-34.464 60.422-43.661 91.702l-61.564-9.535 48.934-74.012c1.686-2.55 4.401-4.147 7.447-4.382zm270.155 155.286c-24.233 20.213-47.756 34.833-69.438 45.412l-149.221-149.221c13.858-28.304 30.771-51.873 45.417-69.431 30.575-36.655 68.602-68.276 104.331-86.756 70.474-36.453 144.725-38.416 182.713-36.348 5.028.274 9.027 4.273 9.301 9.302 2.071 37.988.104 112.238-36.349 182.713-18.479 35.728-50.1 73.754-86.754 104.329z">
-                                </path>
-                                <path
-                                    d="m350.721 236.243c19.202-.002 38.412-7.312 53.031-21.931 14.166-14.165 21.966-32.999 21.966-53.031s-7.801-38.866-21.966-53.031c-29.242-29.243-76.822-29.241-106.062 0-14.166 14.165-21.967 32.999-21.967 53.031s7.802 38.866 21.967 53.031c14.622 14.622 33.822 21.933 53.031 21.931zm-31.82-106.781c8.772-8.773 20.295-13.159 31.818-13.159 11.524 0 23.047 4.386 31.819 13.159 8.499 8.499 13.179 19.799 13.179 31.818s-4.68 23.32-13.179 31.819c-17.544 17.545-46.093 17.544-63.638 0-8.499-8.499-13.18-19.799-13.18-31.818s4.682-23.32 13.181-31.819z">
-                                </path>
-                                <path
-                                    d="m15.301 421.938c3.839 0 7.678-1.464 10.606-4.394l48.973-48.973c5.858-5.858 5.858-15.355 0-21.213-5.857-5.858-15.355-5.858-21.213 0l-48.972 48.973c-5.858 5.858-5.858 15.355 0 21.213 2.928 2.929 6.767 4.394 10.606 4.394z">
-                                </path>
-                                <path
-                                    d="m119.761 392.239c-5.857-5.858-15.355-5.858-21.213 0l-94.154 94.155c-5.858 5.858-5.858 15.355 0 21.213 2.929 2.929 6.767 4.393 10.606 4.393s7.678-1.464 10.606-4.394l94.154-94.154c5.859-5.858 5.859-15.355.001-21.213z">
-                                </path>
-                                <path
-                                    d="m143.429 437.12-48.973 48.973c-5.858 5.858-5.858 15.355 0 21.213 2.929 2.929 6.768 4.394 10.606 4.394s7.678-1.464 10.606-4.394l48.973-48.973c5.858-5.858 5.858-15.355 0-21.213-5.857-5.858-15.355-5.858-21.212 0z">
-                                </path>
-                            </svg>
-                        </p>
-                        <p class="leading-5 text-sm font-bold tracking-wider mt-0 mr-0 mb-2 ml-0 uppercase">Fearless</p>
-                        <p class="text-sm text-gray-700 mt-0 mr-0 mb-2 ml-0">I will remember and recover, not forgive
-                            and forget.</p>
-                    </div>
+
+
+
+    <section class="relative overflow-hidden bg-slate-950 text-white">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/30 via-slate-950 to-cyan-500/20"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div class="max-w-3xl">
+                <div class="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-slate-200 mb-6"
+                     data-en="About Our Company" data-ar="من نحن">
+                    About Our Company
                 </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight"
+                    data-en="We build digital experiences that help businesses grow."
+                    data-ar="نبني تجارب رقمية تساعد الأعمال على النمو.">
+                    We build digital experiences that help businesses grow.
+                </h1>
+
+                <p class="mt-6 text-lg text-slate-300 leading-8"
+                   data-en="This page is designed as a flexible company profile section where every customer can present their story, mission, values and achievements."
+                   data-ar="هذه الصفحة مصممة كملف تعريفي مرن للشركة، يستطيع كل زبون من خلالها عرض قصته ورسالته وقيمه وإنجازاته.">
+                    This page is designed as a flexible company profile section where every customer can present their story, mission, values and achievements.
+                </p>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="py-20 bg-white dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <div>
+                    <p class="text-sm font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400"
+                       data-en="Our Story" data-ar="قصتنا">
+                        Our Story
+                    </p>
+
+                    <h2 class="mt-3 text-3xl sm:text-4xl font-black text-slate-900 dark:text-white"
+                        data-en="A modern template made for real businesses."
+                        data-ar="قالب حديث مصمم للشركات الحقيقية.">
+                        A modern template made for real businesses.
+                    </h2>
+
+                    <p class="mt-5 text-slate-600 dark:text-slate-300 leading-8"
+                       data-en="Use this section to describe how the company started, what it offers, and why customers trust it. Later, this content can be controlled from the dashboard without changing the design."
+                       data-ar="استخدم هذا القسم لشرح بداية الشركة، وما تقدمه، ولماذا يثق بها العملاء. لاحقاً يمكن التحكم بهذا المحتوى من لوحة التحكم بدون تعديل التصميم.">
+                        Use this section to describe how the company started, what it offers, and why customers trust it. Later, this content can be controlled from the dashboard without changing the design.
+                    </p>
+                </div>
+
+                <div class="rounded-[2rem] bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-8">
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="rounded-3xl bg-white dark:bg-slate-900 p-6 shadow-sm">
+                            <div class="text-3xl font-black text-indigo-600">500+</div>
+                            <div class="text-sm text-slate-500 dark:text-slate-400 mt-2" data-en="Projects" data-ar="مشروع">Projects</div>
+                        </div>
+                        <div class="rounded-3xl bg-white dark:bg-slate-900 p-6 shadow-sm">
+                            <div class="text-3xl font-black text-indigo-600">120+</div>
+                            <div class="text-sm text-slate-500 dark:text-slate-400 mt-2" data-en="Clients" data-ar="عميل">Clients</div>
+                        </div>
+                        <div class="rounded-3xl bg-white dark:bg-slate-900 p-6 shadow-sm">
+                            <div class="text-3xl font-black text-indigo-600">15+</div>
+                            <div class="text-sm text-slate-500 dark:text-slate-400 mt-2" data-en="Years" data-ar="سنة">Years</div>
+                        </div>
+                        <div class="rounded-3xl bg-white dark:bg-slate-900 p-6 shadow-sm">
+                            <div class="text-3xl font-black text-indigo-600">99%</div>
+                            <div class="text-sm text-slate-500 dark:text-slate-400 mt-2" data-en="Satisfaction" data-ar="رضا العملاء">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white"
+                    data-en="Mission, Vision & Values"
+                    data-ar="الرسالة والرؤية والقيم">
+                    Mission, Vision & Values
+                </h2>
+                <p class="mt-4 text-slate-600 dark:text-slate-300"
+                   data-en="Clear sections ready to be customized for any customer business."
+                   data-ar="أقسام واضحة وجاهزة للتخصيص لأي نشاط تجاري.">
+                    Clear sections ready to be customized for any customer business.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 p-8 shadow-sm">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-black mb-6">01</div>
+                    <h3 class="text-xl font-black text-slate-900 dark:text-white" data-en="Mission" data-ar="الرسالة">Mission</h3>
+                    <p class="mt-3 text-slate-600 dark:text-slate-300 leading-7"
+                       data-en="Deliver reliable solutions that help customers present their business professionally."
+                       data-ar="تقديم حلول موثوقة تساعد العملاء على عرض أعمالهم بصورة احترافية.">
+                        Deliver reliable solutions that help customers present their business professionally.
+                    </p>
+                </div>
+
+                <div class="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 p-8 shadow-sm">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-black mb-6">02</div>
+                    <h3 class="text-xl font-black text-slate-900 dark:text-white" data-en="Vision" data-ar="الرؤية">Vision</h3>
+                    <p class="mt-3 text-slate-600 dark:text-slate-300 leading-7"
+                       data-en="Become a trusted digital identity for companies that need a strong online presence."
+                       data-ar="أن نكون الهوية الرقمية الموثوقة للشركات التي تحتاج إلى حضور إلكتروني قوي.">
+                        Become a trusted digital identity for companies that need a strong online presence.
+                    </p>
+                </div>
+
+                <div class="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 p-8 shadow-sm">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-black mb-6">03</div>
+                    <h3 class="text-xl font-black text-slate-900 dark:text-white" data-en="Values" data-ar="القيم">Values</h3>
+                    <p class="mt-3 text-slate-600 dark:text-slate-300 leading-7"
+                       data-en="Quality, trust, innovation and customer focus are the foundation of this template."
+                       data-ar="الجودة والثقة والابتكار والتركيز على العميل هي أساس هذا القالب.">
+                        Quality, trust, innovation and customer focus are the foundation of this template.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 bg-white dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white"
+                    data-en="Our Core Values"
+                    data-ar="قيمنا الأساسية">
+                    Our Core Values
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="rounded-3xl border border-slate-200 dark:border-white/10 p-6 text-center">
+                    <div class="text-3xl mb-4">🚀</div>
+                    <div class="font-black text-slate-900 dark:text-white" data-en="Innovation" data-ar="الابتكار">Innovation</div>
+                </div>
+                <div class="rounded-3xl border border-slate-200 dark:border-white/10 p-6 text-center">
+                    <div class="text-3xl mb-4">⭐</div>
+                    <div class="font-black text-slate-900 dark:text-white" data-en="Quality" data-ar="الجودة">Quality</div>
+                </div>
+                <div class="rounded-3xl border border-slate-200 dark:border-white/10 p-6 text-center">
+                    <div class="text-3xl mb-4">🤝</div>
+                    <div class="font-black text-slate-900 dark:text-white" data-en="Trust" data-ar="الثقة">Trust</div>
+                </div>
+                <div class="rounded-3xl border border-slate-200 dark:border-white/10 p-6 text-center">
+                    <div class="text-3xl mb-4">💡</div>
+                    <div class="font-black text-slate-900 dark:text-white" data-en="Customer Focus" data-ar="التركيز على العميل">Customer Focus</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 bg-indigo-600">
+        <div class="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-black text-white"
+                data-en="Ready to build a professional company profile?"
+                data-ar="جاهز لبناء ملف شركة احترافي؟">
+                Ready to build a professional company profile?
+            </h2>
+            <p class="mt-4 text-indigo-100"
+               data-en="This template is ready to become a fully customizable business website."
+               data-ar="هذا القالب جاهز ليصبح موقع أعمال قابل للتخصيص بالكامل.">
+                This template is ready to become a fully customizable business website.
+            </p>
+            <div class="mt-8">
+                <a href="/contact" class="inline-flex rounded-full bg-white px-8 py-3 text-sm font-black text-indigo-700 hover:bg-indigo-50 transition"
+                   data-en="Contact Us" data-ar="تواصل معنا">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
 </div>
